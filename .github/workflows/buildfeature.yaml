@@ -19,3 +19,8 @@ jobs:
                 distribution: "temurin"
                 java-version: "17"
             - run: java --version
+
+            - name: build with maven
+              run: |
+                mvnw clean install
+                echo "build with maven correct"
