@@ -1,0 +1,20 @@
+name: Build Feature Branch
+
+# El workflow se ejecutará cuando se haga push o pull request a ramas que empiecen con 'feature/'
+on:
+    push:
+        branches:
+            - "feature/**"
+    pull_request:
+        branches:
+            - "feature/**"
+
+jobs:
+    build-feature:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: "pull request del repo"
+              run: |
+                    echo "Hola mundo"
+                    
