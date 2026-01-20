@@ -1,0 +1,22 @@
+name: Java CI with Maven
+
+on: 
+    push: 
+        branches: [feature/firstpipeline]
+    pull_request:
+        branches: [feature/firstpipeline]
+    workflow_dispatch:
+
+jobs:
+    build-and-test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+            - uses: actions/setup-java@v4
+              with:
+                distribution: 'temurin'
+                java-version: '17'
+                cache: 'maven'
+            - run: |
+                mvn clean package
