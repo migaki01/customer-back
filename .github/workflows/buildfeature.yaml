@@ -22,5 +22,6 @@ jobs:
 
             - name: build with maven
               run: |
-                mvnw clean install
+                sudo apt install maven -y
+                mvn clean install
                 echo "build with maven correct"
